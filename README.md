@@ -10,3 +10,10 @@ This is a project to implement a machine learning system that can self-learning 
 
 OS: 
 * CentOS 8
+
+## Reproducing implementation
+To reproduct our implementation without do the following steps:
+1. [Installation](#installation)
+2. [Dataset Preparation](#dataset-preparation)
+3. [Train models](#train-models)
+4. [Make Submission](#make-submission)
