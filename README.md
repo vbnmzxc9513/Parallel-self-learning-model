@@ -7,5 +7,6 @@ This is a project to implement a machine learning system that can self-learning 
 * CPU: Intel(R) Xeon(R) Gold 6136 CPU @ 3.00GHz 
 * Core: 2 * (12 cores 24 threads)
 * GPU: RTX 2080 Ti 12GB
+
 OS: 
 * CentOS 8
