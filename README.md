@@ -17,3 +17,12 @@ To reproduct our implementation without do the following steps:
 2. [Dataset Preparation](#dataset-preparation)
 3. [Train models](#train-models)
 4. [Make Submission](#make-submission)
+
+
+## Installation
+Using Anaconda is strongly recommended.
+```
+conda create -n pp_smls python=3.6
+conda activate pp_smls
+git clone 
+```
