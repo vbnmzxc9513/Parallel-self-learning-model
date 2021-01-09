@@ -21,8 +21,15 @@ To reproduct our implementation without do the following steps:
 
 ## Installation
 Using Anaconda is strongly recommended.
+
+### Build environment
 ```
 conda create -n pp_smls python=3.6
 conda activate pp_smls
-git clone 
+git clone https://github.com/vbnmzxc9513/Parallel-self-learning-model.git
+pip install requirement.txt
 ```
+
+## Dataset Preparation
+
+## Train model
