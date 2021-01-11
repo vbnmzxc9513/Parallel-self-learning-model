@@ -43,7 +43,7 @@ python main.py
 ## Modification guide
 
 ### crawler.py
-Use for crawler google imgs with multithread
+Use for crawler google imgs with multithread   
 To use selenium to crawler imgs , you need to assign the path of chrome driver by yourself.
 ```
 line:56  driver_path = 'yourpath/driver/chromedriver'
