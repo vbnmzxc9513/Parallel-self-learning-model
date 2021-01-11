@@ -27,7 +27,7 @@ Using Anaconda is strongly recommended.
 conda create -n pp_smls python=3.6
 conda activate pp_smls
 git clone https://github.com/vbnmzxc9513/Parallel-self-learning-model.git
-conda install requirement.txt
+conda install -r requirement.txt
 ```
 
 ## Dataset Preparation
