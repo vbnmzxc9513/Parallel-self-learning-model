@@ -37,8 +37,8 @@ https://www.kaggle.com/kmader/food41
 
 ## Modification guide
 
-### Crawler.py
+### crawler.py
 
-### Feature Extraction
+### convert_img_hog.py
 
-### SVM train
+### cuda_svm.py
