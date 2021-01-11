@@ -35,7 +35,7 @@ class HingeLoss(torch.nn.Module):
     
     
 def SVM_train(training_data, val_data, test_data, config):
-    device = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')
+    device = torch.device('cuda:'+ str(config.device_idx) if torch.cuda.is_available() else 'cpu')
 #     device = 'cpu'
     training_data = training_data.to(device)
     val_data = val_data.to(device)
@@ -120,7 +120,7 @@ def SVM_train(training_data, val_data, test_data, config):
 
 
 def evaluation(svm, test_data, config):
-    device = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')
+    device = torch.device('cuda:'+ str(config.device_idx) if torch.cuda.is_available() else 'cpu')
 #     device = 'cpu'
     test_data = test_data.float().to(device)
     svm = svm.to(device)
@@ -138,21 +138,15 @@ def evaluation(svm, test_data, config):
             for i in range(config.cls_num):
                 test_true[i] += torch.sum((pred == i) * (i == y)).item()
                 test_total[i] += sum(y == i).item()
-                #print(y)
-                #print(i)
-                #print('------------')
-                #print(i, (pred == y), sum(y == i))
-            
-            #for i in range(7):
-             #   print( test_true[i], test_total[i])
-    
-    print('Apple_pie accuracy %f\n' % (test_true[0] /test_total[0]))
-    print('Chocolate_cake accuracy: %f\n' % (test_true[1] /test_total[1]))
-    print('Donuts accuracy: %f\n' % (test_true[2] /test_total[2]))
-    print('Hamburger accuracy: %f\n' % (test_true[3] /test_total[3]))
-    print('Hot_dog accuracy: %f\n' % (test_true[4] /test_total[4]))
-    print('Ice_cream accuracy: %f\n' % (test_true[5] /test_total[5]))
-    print('Pizza accuracy: %f\n' % (test_true[6] /test_total[6]))
+                
+    with open('result.txt', "w") as f:
+        print('Chocolate_cake accuracy: %f %%\n' % (test_true[0] /test_total[0]*100))
+        print('Donuts accuracy: %f %%\n' % (test_true[1] /test_total[1]*100))
+        print('Ice_cream accuracy: %f %%\n' % (test_true[2] /test_total[2]*100))
+        print('Hot_dog accuracy: %f %%\n' % (test_true[3] /test_total[3]*100))
+        print('Hamburger accuracy: %f %%\n' % (test_true[4] /test_total[4]*100))
+        print('Pizza accuracy: %f %%\n' % (test_true[5] /test_total[5]*100))
+        print('apple_pie accuracy: %f %%\n' % (test_true[6] /test_total[6]*100))
     
     
 class Config():
@@ -162,11 +156,24 @@ class Config():
         # self.c = 1
         self.batch_size = 2500
         self.epoch = 6000
+        self.device_idx = 3
         
-        
+
 config = Config()
 
-train_path = os.path.join('.', 'Train_food7.csv')
+
+X_train, y_train = load_svmlight_file('Train_food7')
+mat = X_train.todense()
+
+df1 = pd.DataFrame(mat)
+df2 = pd.DataFrame(y_train)
+
+df = pd.concat([df1, df2], axis=1)
+
+training_data, test_data = train_test_split(df.values, random_state=777, train_size=0.7)
+pd.DataFrame(training_data).to_pickle('train_food7.pkl')
+pd.DataFrame(test_data).to_pickle('test_food7.pkl')
+
 train_pd = pd.read_pickle('train_food7.pkl')
 test_pd = pd.read_pickle('test_food7.pkl')
 
