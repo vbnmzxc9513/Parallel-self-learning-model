@@ -30,7 +30,8 @@ git clone https://github.com/vbnmzxc9513/Parallel-self-learning-model.git
 pip install -r requirement.txt
 ```
 
-## Dataset Preparation
+## Dataset Preparation  
+https://www.kaggle.com/kmader/food41
 
 ## Train model
 
