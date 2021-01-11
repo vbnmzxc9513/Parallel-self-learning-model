@@ -3,6 +3,10 @@ torchvision
 pandas==1.0.4
 tqdm==4.46.1
 sklearn==0.0
+scikit-image==0.17.2
+scikit-learn==0.23.2
 beautifulsoup4==4.9.3
 selenium==3.141.0
 requests==2.25.0
+numpy==1.19.4
+opencv-python==4.4.0.46
