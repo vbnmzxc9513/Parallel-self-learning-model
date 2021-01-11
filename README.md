@@ -36,3 +36,9 @@ https://www.kaggle.com/kmader/food41
 ## Train model
 
 ## Modification guide
+
+### Crawler.py
+
+### Feature Extraction
+
+### SVM train
