@@ -3,3 +3,6 @@ torchvision
 pandas==1.0.4
 tqdm==4.46.1
 sklearn==0.0
+beautifulsoup4==4.9.3
+selenium==3.141.0
+requests==2.25.0
