@@ -35,12 +35,17 @@ https://www.kaggle.com/kmader/food41
 
 ## Train model
 
+To train models, run following commands.
+```
+python main.py
+````
+
 ## Modification guide
 
 ### crawler.py
 
 ### convert_img_hog.py
-
+Ues for converting image to HOG in multithread   
 To prepare the training data for converting image data to eigenvector, simply execute all the cells. After preparing training data, change the input path input:  
 ```
 line:19 self.train_path = 'yourpath/train'
