@@ -41,4 +41,10 @@ https://www.kaggle.com/kmader/food41
 
 ### convert_img_hog.py
 
+To prepare the training data for converting image data to eigenvector, simply execute all the cells. After preparing training data, change the input path input:  
+```
+line:19 self.train_path = 'yourpath/train'
+```
+It will automatically convert the data to HOG file
+
 ### cuda_svm.py
