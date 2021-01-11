@@ -53,7 +53,7 @@ def create_dir(category):
 
 def get_chromedriver(use_proxy=False, user_agent=None, proxy_auth_plugin=None) :
     # you need to change driver_path by yourself
-    driver_path = '/root/wei/ParallelProgramming/Final_Project/crawler/driver/chromedriver'
+    driver_path = './driver/chromedriver'
     
     chrome_options = webdriver.ChromeOptions()
     
@@ -170,7 +170,7 @@ def crawler_google_img_no_create_threads(keyword,user_proxy = None, proxy_auth_p
 
 def crawler_google_img(keyword,user_proxy = None, proxy_auth_plugin = None):
     create_dir(keyword)
-    folder_path = "./img/{keyword}".format(keyword=keyword)
+    folder_path = "./train/{keyword}".format(keyword=keyword)
     
     url = "https://www.google.com.tw/search?q={keyword}&rlz=1C1CAFB_enTW617TW621&source=lnms&tbm=isch&sa=X&ved=0ahUKEwienc6V1oLcAhVN-WEKHdD_B3EQ_AUICigB&biw=1128&bih=863".format(keyword=keyword.replace('_','+'))
     driver = get_chromedriver(use_proxy=user_proxy,proxy_auth_plugin = proxy_auth_plugin)
