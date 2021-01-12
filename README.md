@@ -39,7 +39,7 @@ kaggle datasets download -d kmader/food41
 
 ## Train model
 
-To train models, run following commands.
+To train models, run the following commands. The program will do feature selection, svm training, and crawler in the cycle. The training result will record in result.txt.
 ```
 python main.py
 ````
