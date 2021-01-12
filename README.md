@@ -59,3 +59,5 @@ line:19 self.train_path = 'yourpath/train'
 It will automatically convert the data to HOG file
 
 ### cuda_svm.py
+
+## File Explanation
