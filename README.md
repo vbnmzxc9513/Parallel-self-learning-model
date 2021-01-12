@@ -30,7 +30,8 @@ pip install -r requirement.txt
 ```
 
 ## Dataset Preparation  
-We got dataset from Kaggle Food Images (Food-101): https://www.kaggle.com/kmader/food41
+We got dataset from Kaggle Food Images (Food-101): https://www.kaggle.com/kmader/food41 .
+
 You can download images from the above url or using Kaggle api download images by following command:
 ```
 kaggle datasets download -d kmader/food41
