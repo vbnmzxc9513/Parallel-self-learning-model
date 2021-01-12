@@ -30,8 +30,7 @@ pip install -r requirement.txt
 ```
 
 ## Dataset Preparation  
-We got dataset from Kaggle Food Images (Food-101): https://www.kaggle.com/kmader/food41 .
-
+We got dataset from Kaggle Food Images (Food-101): https://www.kaggle.com/kmader/food41.  
 You can download images from the above url or using Kaggle api download images by following command:
 ```
 kaggle datasets download -d kmader/food41
@@ -44,7 +43,7 @@ To train models, run the following commands. The program will do feature selecti
 python main.py
 ````
 
-## Modification guide
+## Modification guide and File explanation
 
 ### crawler.py
 Use for crawler google imgs with multithread.   
@@ -63,5 +62,13 @@ line:19 self.train_path = 'yourpath/train'
 It will automatically convert the data to HOG file
 
 ### cuda_svm.py
+This .py file including cuda_svm structure, model config, training loop and evaluation function.  
 
-## File Explanation
+1. You can chose hing loss or crossentropy loss as your backpropagation method.
+> line:46, 47 criterion = torch.nn.CrossEntropyLoss() #  or criterion = HingeLoss()
+2. Modify cls_num to which class number for your data. You can also modify batch size and training epoch as you want.
+> line:161~166 class Config():
+3. Modfiy cuda index for chosing which divice you seleted.  
+For example `device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')` or  
+`device = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')`
+> line:37, 118
