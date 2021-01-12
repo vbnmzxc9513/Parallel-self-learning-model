@@ -65,10 +65,10 @@ It will automatically convert the data to HOG file
 This .py file including cuda_svm structure, model config, training loop and evaluation function.  
 
 1. You can chose hing loss or crossentropy loss as your backpropagation method.
-> line:46, 47 criterion = torch.nn.CrossEntropyLoss() #  or criterion = HingeLoss()
+> line: 46, 47 criterion = torch.nn.CrossEntropyLoss() #  or criterion = HingeLoss()
 2. Modify cls_num to which class number for your data. You can also modify batch size and training epoch as you want.
-> line:161~166 class Config():
+> line: 161~166 class Config():
 3. Modfiy cuda index for chosing which divice you seleted.  
 For example `device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')` or  
 `device = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')`
-> line:37, 118
+> line: 37, 118
